@@ -8,7 +8,7 @@ const site = {
     language: "pl-PL",
   },
   nav: [
-    { label: "Start", path: "index.html" },
+    { label: "Strona główna", path: "index.html" },
     { label: "O redakcji", path: "autorzy.html" },
     { label: "Kategorie", path: "kategorie.html" },
     { label: "Aktualności", path: "aktualnosci.html" },
@@ -140,7 +140,7 @@ const posts = [
     title: "Remont ul. Długiej rusza w listopadzie",
     excerpt: "Utrudnienia potrwają około 3 miesięcy. Sprawdź objazdy.",
     content: "Ratusz ogłosił harmonogram prac na ul. Długiej. W pierwszym etapie zamknięte zostaną odcinki przy rynku...",
-    cover: "images/posty/dluga.jpg",
+    cover: "rob.jpg",
     date: "2025-10-20T08:00:00+02:00",
     categoryId: "miasto-gmina",
     authorId: "martyna-grabowska",
@@ -154,7 +154,7 @@ const posts = [
     title: "Festiwal filmowy „Pod szkolnym niebem” już w sobotę",
     excerpt: "Plenerowe pokazy, warsztaty i spotkania z twórcami.",
     content: "Na placu przy domu kultury stanie ekran o szerokości 12 metrów. Organizatorzy zapowiadają konkurs krótkich metraży...",
-    cover: "images/posty/festiwal.jpg",
+    cover: "film.jpg",
     date: "2025-10-17T12:00:00+02:00",
     categoryId: "kultura",
     authorId: "ola-janicka",
@@ -275,5 +275,70 @@ const posts = [
     featured: false,
   },
 ];
+ 
+let zmienna = site.meta.title;
+
+
+
+let p = document.createElement("p");
+p.textContent = "";
+p.classList.add("test");
+let section = document.getElementById("section");
+section.appendChild(p);
+
+
+let menu = site.nav;
+let ul = document.querySelector("#menu");
+
+
+menu.forEach(item =>{
+    let li = document.createElement("li");
+    let a = document.createElement("a");
+
+    a.textContent = item.label;
+    a.href = item.path;
+
+    li.appendChild(a);
+    ul.appendChild(li);
+})
+
+
+function createArticle(){
+    for(i = 0; i<=posts.length; i++){
+    let article = document.createElement("article");
+    let img = document.createElement("img");
+    let h2 = document.createElement("h2");
+    let p = document.createElement("p");
+    let a = document.createElement("a");
+    let span = document.createElement("span");
+
+
+    let imgSrc = posts[i].cover;
+    let h2Value = posts[i].title;
+    let pValue = posts[i].excerpt;
+    let spanValue =posts[i].categoryId;
+
+    img.src = imgSrc;
+    h2.textContent = h2Value;
+    p.textContent = pValue;
+    a.textContent = "Więcej";
+    a.href = "#";
+    span.textContent = spanValue;
+
+    article.appendChild(img);
+    article.appendChild(h2);
+    article.appendChild(p);
+    article.appendChild(a);
+    article.appendChild(span);
+
+    section.appendChild(article);
+    }
+
+}
+createArticle();
+    
+
+
+
 
 
