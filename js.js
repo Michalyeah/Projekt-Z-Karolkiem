@@ -154,7 +154,7 @@ const posts = [
     title: "Festiwal filmowy „Pod szkolnym niebem” już w sobotę",
     excerpt: "Plenerowe pokazy, warsztaty i spotkania z twórcami.",
     content: "Na placu przy domu kultury stanie ekran o szerokości 12 metrów. Organizatorzy zapowiadają konkurs krótkich metraży...",
-    cover: "film.jpg",
+    cover: "film.png",
     date: "2025-10-17T12:00:00+02:00",
     categoryId: "kultura",
     authorId: "ola-janicka",
@@ -168,7 +168,7 @@ const posts = [
     title: "Derby piłki nożnej: lider pokonany 2:1",
     excerpt: "Decydująca bramka w 89. minucie po kontrze gospodarzy.",
     content: "Mecz rozpoczął się od przewagi gości, ale po przerwie miejscowi przejęli inicjatywę...",
-    cover: "images/posty/derby.jpg",
+    cover: "pilk.jpg",
     date: "2025-10-12T18:30:00+02:00",
     categoryId: "sport",
     authorId: "damian-sobczak",
@@ -182,7 +182,7 @@ const posts = [
     title: "Targi pracy w hali sportowej – 40 wystawców",
     excerpt: "Oferty staży i etatów dla uczniów i absolwentów.",
     content: "W programie konsultacje CV, warsztaty z rekruterami i strefa doradztwa zawodowego...",
-    cover: "images/posty/targi-pracy.jpg",
+    cover: "targ.jpg",
     date: "2025-10-08T10:00:00+02:00",
     categoryId: "biznes",
     authorId: "nina-krol",
@@ -196,7 +196,7 @@ const posts = [
     title: "Awaria wodociągów na osiedlu Północ – beczkowozy",
     excerpt: "Przerwa w dostawie wody potrwa do godz. 18:00.",
     content: "Zakład komunalny informuje o pęknięciu magistrali przy ul. Leśnej. Na miejscu pracują służby...",
-    cover: "images/posty/woda.jpg",
+    cover: "awar.jpg",
     date: "2025-10-23T07:30:00+02:00",
     categoryId: "interwencje",
     authorId: "piotr-wasilewski",
@@ -210,7 +210,7 @@ const posts = [
     title: "Otwarcie Inkubatora Przedsiębiorczości",
     excerpt: "Nowa przestrzeń dla startujących firm w centrum miasta.",
     content: "W budynku dawnej poczty powstało miejsce coworkingowe z doradztwem i szkoleniami...",
-    cover: "images/posty/inkubator.jpg",
+    cover: "inku.jpg",
     date: "2025-09-29T09:00:00+02:00",
     categoryId: "biznes",
     authorId: "nina-krol",
@@ -224,7 +224,7 @@ const posts = [
     title: "Modernizacja parkowej alei – więcej zieleni",
     excerpt: "Ławki, oświetlenie LED i nowe nasadzenia drzew.",
     content: "Zarząd zieleni zapowiada także budki lęgowe i łąkę kwietną przy stawie...",
-    cover: "images/posty/park.jpg",
+    cover: "moder.jpg",
     date: "2025-10-05T14:15:00+02:00",
     categoryId: "miasto-gmina",
     authorId: "martyna-grabowska",
@@ -238,7 +238,7 @@ const posts = [
     title: "Premiera spektaklu Teatru Młodych",
     excerpt: "„Mosty” – opowieść o sąsiedztwie i wspólnocie.",
     content: "Po spektaklu rozmowa z reżyserką i aktorami. Bilety do odbioru bezpłatnie w DK...",
-    cover: "images/posty/teatr-mlodych.jpg",
+    cover: "teat.jpg",
     date: "2025-10-16T19:00:00+02:00",
     categoryId: "kultura",
     authorId: "ola-janicka",
@@ -252,7 +252,7 @@ const posts = [
     title: "Turniej siatkówki amatorów – zapisy otwarte",
     excerpt: "Drużyny 6-osobowe, finał w niedzielę.",
     content: "Zgłoszenia przez formularz MOSiR. Organizator zapewnia sprzęt i sędziowanie...",
-    cover: "images/posty/siatkowka.jpg",
+    cover: "turn.jpg",
     date: "2025-09-21T16:45:00+02:00",
     categoryId: "sport",
     authorId: "damian-sobczak",
@@ -266,7 +266,7 @@ const posts = [
     title: "Patrole społeczne na osiedlach – pilotaż",
     excerpt: "Wspólne działania straży miejskiej i mieszkańców.",
     content: "Celem programu jest szybsza reakcja na drobne wykroczenia i poprawa bezpieczeństwa...",
-    cover: "images/posty/patrol.jpg",
+    cover: "patr.jpg",
     date: "2025-10-03T11:30:00+02:00",
     categoryId: "interwencje",
     authorId: "piotr-wasilewski",
@@ -275,16 +275,29 @@ const posts = [
     featured: false,
   },
 ];
- 
-let zmienna = site.meta.title;
 
 
-
-let p = document.createElement("p");
+ let p = document.createElement("p");
 p.textContent = "";
 p.classList.add("test");
+
 let section = document.getElementById("section");
+if (section) {
+  section.style.display = "flex";
+  section.style.flexDirection = "row";
+  section.style.flexWrap = "wrap";
+  section.style.justifyContent = "center";  
+section.style.alignItems = "flex-start";  
+
+             
+
+  
+  
+
+}
 section.appendChild(p);
+
+let zmienna = site.meta.title;
 
 
 let menu = site.nav;
@@ -304,13 +317,40 @@ menu.forEach(item =>{
 
 
 function createArticle(){
-    for(i = 0; i<=posts.length; i++){
+    for( let i = 0; i<=posts.length; i++){
     let article = document.createElement("article");
+    article.style.outline="solid 1px";
+    article.style.borderRadius="6px";
+    article.style.position="relative";
+    article.style.overflow="hidden";
+    article.style.marginLeft="10px";
+    article.style.marginTop="20px";
+    article.classList.add("post");
+    let post = posts[i];
+    
     let img = document.createElement("img");
+    img.src = post.cover;
+    img.alt = post.title;
+    img.style.width = "800px";
+    img.style.height = "450px";
+
     let h2 = document.createElement("h2");
+    h2.textContent = post.title;
     let p = document.createElement("p");
+    p.textContent = post.excerpt;
     let a = document.createElement("a");
+    a.textContent = "Więcej";
+    a.href = "#";
+    a.style.textDecoration="none";
+    a.style.color="red";
     let span = document.createElement("span");
+    span.style.position="absolute";
+    span.style.top="0";
+    span.style.left="0";
+    span.style.backgroundColor="red";
+    span.style.color="white";
+    span.style.padding="10px 24px";
+    span.style.borderTopLeftRadius="4px";
 
 
     let imgSrc = posts[i].cover;
@@ -335,7 +375,13 @@ function createArticle(){
     }
 
 }
+
 createArticle();
+
+
+
+
+
     
 
 
