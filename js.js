@@ -376,6 +376,31 @@ function createArticle(){
 
 }
 
+window.addEventListener('resize', () => {
+  const width = window.innerWidth;
+  const postsEl = document.querySelectorAll(".post");
+ 
+ postsEl.forEach(article => {
+
+ 
+  if (width < 1622) {
+    article.style.flex = "1 1 calc(25% - 40px)";
+  } else if (width < 1200) {
+    article.style.flex = "1 1 calc(33.33% - 40px)";
+    
+  }
+   else if (width < 824) {
+    article.style.flex = "1 1 calc(50% - 40px)";
+  } 
+   else {
+    article.style.flex = "1 1 90%";
+     
+  }
+});
+});
+
+
+
 createArticle();
 
 
