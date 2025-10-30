@@ -136,7 +136,7 @@ const authors = [
 const posts = [
   {
     id: "remont-ulicy-dlugiej",
-    slug: "remont-ulicy-dlugiej",
+    slug: "pierwszapods.html",
     title: "Remont ul. Długiej rusza w listopadzie",
     excerpt: "Utrudnienia potrwają około 3 miesięcy. Sprawdź objazdy.",
     content: "Ratusz ogłosił harmonogram prac na ul. Długiej. W pierwszym etapie zamknięte zostaną odcinki przy rynku...",
@@ -150,7 +150,7 @@ const posts = [
   },
   {
     id: "festiwal-filmowy-pod-szkolnym-niebem",
-    slug: "festiwal-filmowy-pod-szkolnym-niebem",
+    slug: "drugapod.html",
     title: "Festiwal filmowy „Pod szkolnym niebem” już w sobotę",
     excerpt: "Plenerowe pokazy, warsztaty i spotkania z twórcami.",
     content: "Na placu przy domu kultury stanie ekran o szerokości 12 metrów. Organizatorzy zapowiadają konkurs krótkich metraży...",
@@ -164,7 +164,7 @@ const posts = [
   },
   {
     id: "derby-pilki-noznej-lider-pokonany",
-    slug: "derby-pilki-noznej-lider-pokonany",
+    slug: "trzecipod.html",
     title: "Derby piłki nożnej: lider pokonany 2:1",
     excerpt: "Decydująca bramka w 89. minucie po kontrze gospodarzy.",
     content: "Mecz rozpoczął się od przewagi gości, ale po przerwie miejscowi przejęli inicjatywę...",
@@ -178,7 +178,7 @@ const posts = [
   },
   {
     id: "targi-pracy-w-hali-sportowej",
-    slug: "targi-pracy-w-hali-sportowej",
+    slug: "czwartapod.html",
     title: "Targi pracy w hali sportowej – 40 wystawców",
     excerpt: "Oferty staży i etatów dla uczniów i absolwentów.",
     content: "W programie konsultacje CV, warsztaty z rekruterami i strefa doradztwa zawodowego...",
@@ -192,7 +192,7 @@ const posts = [
   },
   {
     id: "awaria-wodociagow-na-osiedlu",
-    slug: "awaria-wodociagow-na-osiedlu",
+    slug: "piatąpod.html",
     title: "Awaria wodociągów na osiedlu Północ – beczkowozy",
     excerpt: "Przerwa w dostawie wody potrwa do godz. 18:00.",
     content: "Zakład komunalny informuje o pęknięciu magistrali przy ul. Leśnej. Na miejscu pracują służby...",
@@ -206,7 +206,7 @@ const posts = [
   },
   {
     id: "otwarcie-inkubatora-przedsiebiorczosci",
-    slug: "otwarcie-inkubatora-przedsiebiorczosci",
+    slug: "szustapod.html",
     title: "Otwarcie Inkubatora Przedsiębiorczości",
     excerpt: "Nowa przestrzeń dla startujących firm w centrum miasta.",
     content: "W budynku dawnej poczty powstało miejsce coworkingowe z doradztwem i szkoleniami...",
@@ -220,7 +220,7 @@ const posts = [
   },
   {
     id: "modernizacja-parkowej-alei",
-    slug: "modernizacja-parkowej-alei",
+    slug: "siedempod.html",
     title: "Modernizacja parkowej alei – więcej zieleni",
     excerpt: "Ławki, oświetlenie LED i nowe nasadzenia drzew.",
     content: "Zarząd zieleni zapowiada także budki lęgowe i łąkę kwietną przy stawie...",
@@ -234,7 +234,7 @@ const posts = [
   },
   {
     id: "premiera-spektaklu-teatr-mlodych",
-    slug: "premiera-spektaklu-teatr-mlodych",
+    slug: "ósmapod.html",
     title: "Premiera spektaklu Teatru Młodych",
     excerpt: "„Mosty” – opowieść o sąsiedztwie i wspólnocie.",
     content: "Po spektaklu rozmowa z reżyserką i aktorami. Bilety do odbioru bezpłatnie w DK...",
@@ -248,7 +248,7 @@ const posts = [
   },
   {
     id: "turniej-siatkowki-amatorow",
-    slug: "turniej-siatkowki-amatorow",
+    slug: "dziewiepod.html",
     title: "Turniej siatkówki amatorów – zapisy otwarte",
     excerpt: "Drużyny 6-osobowe, finał w niedzielę.",
     content: "Zgłoszenia przez formularz MOSiR. Organizator zapewnia sprzęt i sędziowanie...",
@@ -262,7 +262,7 @@ const posts = [
   },
   {
     id: "patrole-spoleczne-na-osiedlach",
-    slug: "patrole-spoleczne-na-osiedlach",
+    slug: "porstrona.html",
     title: "Patrole społeczne na osiedlach – pilotaż",
     excerpt: "Wspólne działania straży miejskiej i mieszkańców.",
     content: "Celem programu jest szybsza reakcja na drobne wykroczenia i poprawa bezpieczeństwa...",
@@ -280,14 +280,15 @@ const posts = [
  let p = document.createElement("p");
 p.textContent = "";
 p.classList.add("test");
-
+let articles = document.getElementById("articles");
 let section = document.getElementById("section");
-if (section) {
-  section.style.display = "flex";
-  section.style.flexDirection = "row";
-  section.style.flexWrap = "wrap";
-  section.style.justifyContent = "center";  
-section.style.alignItems = "flex-start";  
+section.style.marginBottom="10px";
+if (articles) {
+  articles.style.display = "flex";
+  articles.style.flexDirection = "row";
+  articles.style.flexWrap = "wrap";
+  articles.style.justifyContent = "center";  
+articles.style.alignItems = "dlex-start";  
 
              
 
@@ -298,23 +299,34 @@ section.style.alignItems = "flex-start";
 section.appendChild(p);
 
 let zmienna = site.meta.title;
+let body = document.getElementById("body")
 
 
-let menu = site.nav;
-let ul = document.querySelector("#menu");
+
+function createNavbar(){
+            let menu = site.nav;
+            let nav = document.createElement("nav");
+            let container = document.getElementById("container-fluid");
+            let ul = document.createElement("ul");
+            
+            menu.forEach(item =>{
+              let li = document.createElement("li");
+              let a = document.createElement("a");
+  
+              a.textContent = item.label;
+              a.href = item.path;
+              li.appendChild(a);
+              ul.appendChild(li);
+              ul.classList.add("nav-list");
+              //ul.classList.add("active");
+              nav.appendChild(ul);
+              container.appendChild(nav);
+            })
+            
+          } 
 
 
-menu.forEach(item =>{
-    let li = document.createElement("li");
-    let a = document.createElement("a");
-
-    a.textContent = item.label;
-    a.href = item.path;
-
-    li.appendChild(a);
-    ul.appendChild(li);
-})
-
+let foot = document.getElementById("footer");
 
 function createArticle(){
     for( let i = 0; i<=posts.length; i++){
@@ -327,7 +339,7 @@ function createArticle(){
     article.style.marginTop="20px";
     article.classList.add("post");
     let post = posts[i];
-    
+    let slug = posts[i].slug;
     let img = document.createElement("img");
     img.src = post.cover;
     img.alt = post.title;
@@ -339,15 +351,14 @@ function createArticle(){
     let p = document.createElement("p");
     p.textContent = post.excerpt;
     let a = document.createElement("a");
-    a.textContent = "Więcej";
-    a.href = "#";
+ 
     a.style.textDecoration="none";
-    a.style.color="red";
+    a.style.color="marron";
     let span = document.createElement("span");
     span.style.position="absolute";
     span.style.top="0";
     span.style.left="0";
-    span.style.backgroundColor="red";
+    span.style.backgroundColor="maroon";
     span.style.color="white";
     span.style.padding="10px 24px";
     span.style.borderTopLeftRadius="4px";
@@ -358,23 +369,41 @@ function createArticle(){
     let pValue = posts[i].excerpt;
     let spanValue =posts[i].categoryId;
 
-    img.src = imgSrc;
+    img.src = "img/" +imgSrc;
     h2.textContent = h2Value;
     p.textContent = pValue;
+    a.style.backgroundColor="maroon";
+    a.style.color="white";
+    a.style.padding="5px";
     a.textContent = "Więcej";
-    a.href = "#";
+    a.href = "podstrony/"+slug;
     span.textContent = spanValue;
+
+
+    foot.style.width="100%";
+    foot.style.height="10%";
+    foot.style.backgroundColor="gray";
+    foot.style.color="light-gray";
+    foot.textContent="RMF ZET - informacje ze wsząd i znikąd.";
+    
+
 
     article.appendChild(img);
     article.appendChild(h2);
     article.appendChild(p);
     article.appendChild(a);
     article.appendChild(span);
-
-    section.appendChild(article);
+   
+    articles.appendChild(article);
+     
+   
     }
-
+    
+    
+ 
 }
+ 
+          
 
 window.addEventListener('resize', () => {
   const width = window.innerWidth;
@@ -384,28 +413,43 @@ window.addEventListener('resize', () => {
 
  
   if (width < 1622) {
-    article.style.flex = "1 1 calc(25% - 40px)";
+    article.style.flex = "";
   } else if (width < 1200) {
-    article.style.flex = "1 1 calc(33.33% - 40px)";
+    article.style.flex = "";
     
   }
    else if (width < 824) {
-    article.style.flex = "1 1 calc(50% - 40px)";
+    article.style.flex = "1";
   } 
    else {
-    article.style.flex = "1 1 90%";
+    article.style.flex = "";
      
   }
 });
+
 });
 
 
-
-createArticle();
-
-
+createNavbar()
+createArticle()
 
 
+
+
+
+        
+          const navToggle = document.querySelector(".nav-toggle");
+          const menu = document.querySelector(".nav-list");
+          const navToggleImg = document.querySelector("#nav-toggle-img");
+  
+          navToggle.addEventListener('click', ()=>{
+            menu.classList.toggle('active');
+            if (menu.classList.contains('active')){
+                navToggleImg.src = 'ham.png';
+            }else{
+              navToggleImg.src = 'ham.png';
+            }
+          });
 
     
 
