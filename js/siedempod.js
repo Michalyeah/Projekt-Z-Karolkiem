@@ -15,7 +15,7 @@ body.style.fontFamily = "'Sansita', sans-serif";
 body.style.backgroundColor = "#fff";
 body.style.textAlign = "center";
 
-header.style.backgroundColor = "red";
+header.style.backgroundColor = "maroon";
 header.style.color = "white";
 header.style.width = "100%";
 header.style.display = "flex";
@@ -38,7 +38,7 @@ logo.addEventListener("mouseleave", () => {
 });
 logo.addEventListener("click", (e) => {
     e.preventDefault();
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
 });
 
 

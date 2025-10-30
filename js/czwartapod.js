@@ -17,7 +17,7 @@ body.style.backgroundColor = "#f5f5f5";
 body.style.textAlign = "center";
 body.style.color = "#111";
 
-header.style.backgroundColor = "red";
+header.style.backgroundColor = "maroon";
 header.style.width = "100%";
 pasek.style.display = "flex";
 pasek.style.justifyContent = "center";
@@ -27,7 +27,7 @@ pasek.style.padding = "10px 0";
 logo.style.height = "27px";
 logo.addEventListener("click", (e) => {
     e.preventDefault();
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
 });
 
 

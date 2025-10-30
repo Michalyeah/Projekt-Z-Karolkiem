@@ -15,7 +15,7 @@ body.style.fontFamily = "'Sansita', sans-serif";
 body.style.backgroundColor = "white";
 body.style.color = "#111";
 
-header.style.backgroundColor = "red";
+header.style.backgroundColor = "maroon";
 header.style.width = "100%";
 
 pasek.style.display = "flex";
@@ -34,7 +34,7 @@ logo.addEventListener("mouseleave", () => {
 });
 logo.addEventListener("click", (e) => {
     e.preventDefault();
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
 });
 
 

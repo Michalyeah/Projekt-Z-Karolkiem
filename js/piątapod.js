@@ -19,7 +19,7 @@ body.style.display = "flex";
 body.style.flexDirection = "column";
 body.style.alignItems = "center";
 
-header.style.backgroundColor = "red";
+header.style.backgroundColor = "maroon";
 header.style.color = "white";
 header.style.width = "100%";
 
@@ -42,7 +42,7 @@ logo.addEventListener("mouseleave", () => {
 
 logo.addEventListener("click", (e) => {
     e.preventDefault();
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
 });
 
 

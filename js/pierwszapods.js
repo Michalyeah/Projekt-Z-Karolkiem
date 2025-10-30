@@ -1,5 +1,3 @@
-
-
 const body = document.body;
 const header = document.querySelector("header");
 const pasek = document.querySelector(".pasek");
@@ -14,7 +12,7 @@ body.style.fontFamily = "'Sansita', sans-serif";
 body.style.backgroundColor = "white";
 body.style.color = "#000";
 
-header.style.backgroundColor = "red";
+header.style.backgroundColor = "maroon";
 header.style.color = "white";
 header.style.width = "100%";
 header.style.display = "flex";
@@ -37,9 +35,8 @@ logo.addEventListener("mouseleave", () => {
 });
 logo.addEventListener("click", (e) => {
     e.preventDefault();
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
 });
-
 
 newsTitle.style.textAlign = "center";
 newsTitle.style.fontWeight = "900";
@@ -49,7 +46,6 @@ newsTitle.style.marginTop = "40px";
 newsTitle.style.maxWidth = "800px";
 newsTitle.style.marginLeft = "auto";
 newsTitle.style.marginRight = "auto";
-
 
 function stylizujGrafike(img) {
     if (img) {
@@ -61,10 +57,8 @@ function stylizujGrafike(img) {
     }
 }
 
-
 stylizujGrafike(newsPhoto);   
 stylizujGrafike(secondPhoto); 
-
 
 if (newsContent) {
     newsContent.style.maxWidth = "800px";
@@ -75,20 +69,12 @@ if (newsContent) {
     newsContent.style.fontWeight = "600";
 }
 
-const links = newsContent.querySelectorAll("a");
+const links = newsContent ? newsContent.querySelectorAll("a") : [];
 links.forEach(link => {
     link.style.color = "black";
     link.style.textDecoration = "none";
     link.style.fontWeight = "700";
 });
-
-
-
-
-const fontLink = document.createElement("link");
-fontLink.href = "https://fonts.googleapis.com/css2?family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap";
-fontLink.rel = "stylesheet";
-document.head.appendChild(fontLink);
 
 const captions = document.querySelectorAll(".caption");
 captions.forEach(caption => {
