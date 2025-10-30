@@ -150,7 +150,7 @@ const posts = [
   },
   {
     id: "festiwal-filmowy-pod-szkolnym-niebem",
-    slug: "drugapod.html",
+    slug: "drugapods.html",
     title: "Festiwal filmowy „Pod szkolnym niebem” już w sobotę",
     excerpt: "Plenerowe pokazy, warsztaty i spotkania z twórcami.",
     content: "Na placu przy domu kultury stanie ekran o szerokości 12 metrów. Organizatorzy zapowiadają konkurs krótkich metraży...",
@@ -192,7 +192,7 @@ const posts = [
   },
   {
     id: "awaria-wodociagow-na-osiedlu",
-    slug: "piatąpod.html",
+    slug: "piątapod.html",
     title: "Awaria wodociągów na osiedlu Północ – beczkowozy",
     excerpt: "Przerwa w dostawie wody potrwa do godz. 18:00.",
     content: "Zakład komunalny informuje o pęknięciu magistrali przy ul. Leśnej. Na miejscu pracują służby...",
